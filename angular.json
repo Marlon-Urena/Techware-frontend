@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "/Users/brianaconnolly/Desktop/techware-frontend/node_modules/bulma/css/bulma.min.css",
               "src/styles.css"
             ],
             "scripts": []

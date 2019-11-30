@@ -1,20 +1,26 @@
-<form>
-
+<div class="container">
+<form (ngSubmit)="onSubmit()">
   <div>
-    <label for="name">
-      Name
+    <label>
+      Username:
+      <input type="text" [formControl]="userName">
     </label>
-    <input id="name" type="text" formControlName="name">
   </div>
 
   <div>
-    <label for="password">
-      Password
+    <label>
+      Password:
+      <input type="password" [formControl]="password">
     </label>
-    <input id="password" type="text" formControlName="password">
   </div>
 
-  <button class="button" type="submit">login</button>
-
+  <button class="button" type="submit">Login</button>
 </form>
 
+  <div class="buttons">
+    <a class="button is-primary" routerLink="/login">
+      <strong>Sign Up</strong>
+    </a>
+  </div>
+
+</div>

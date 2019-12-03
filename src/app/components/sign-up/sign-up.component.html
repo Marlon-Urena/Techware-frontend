@@ -1,0 +1,49 @@
+<div class="container">
+  <form>
+
+    <label>Enter First Name: <input type="text" [formControl]="firstName"> </label>
+
+    <label>Enter Last Name: <input type="text" [formControl]="lastName"> </label>
+
+    <div>
+    <label>Address: <input type="text" [formControl]="address"> </label>
+    </div>
+
+    <div>
+    <label> City: <input type="city" [formControl]="address"> </label>
+    <label> State: <input type="state" [formControl]="state"> </label>
+    </div>
+
+    <div>
+    <label> ZIP: <input type="zip" [formControl]="zip"> </label>
+    <label>Country: <input type="country" [formControl]="country"></label>
+    </div>
+
+    <div><label> Birthday:
+      <input type="date" [formControl]="bday"></label></div>
+    <div>
+      <label>
+        Enter a Username:
+        <input type="text" [formControl]="userName">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Set a Password:
+        <input type="password" [formControl]="setPassword">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        Confirm a Password:
+        <input type="password" [formControl]="confirmPassword">
+      </label>
+    </div>
+
+    <button class="button" type="submit">Create Account</button>
+  </form>
+
+</div>
+

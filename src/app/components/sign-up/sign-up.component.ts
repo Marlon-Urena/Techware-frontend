@@ -12,9 +12,7 @@ export class SignUpComponent implements OnInit {
   userName = new FormControl('');
   setPassword = new FormControl('');
   confirmPassword = new FormControl('');
-  bday = new FormControl('');
   address = new FormControl('');
-  city = new FormControl('');
   state = new FormControl('');
   country = new FormControl('');
   zip = new FormControl('');

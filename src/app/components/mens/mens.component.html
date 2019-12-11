@@ -8,123 +8,50 @@
 
 <section class="section">
   <div class="container">
-    <div class="columns is-multiline">
-      <div class="column card">
+    <div class="columns is-multiline" >
+      <div class="column card" *ngFor="let product of products">
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="assets/img/mens/mens-alonso.png" alt="Alonso Jersey">
+            <img src="{{product.photo}}" alt="Alonso Jersey">
           </figure>
         </div>
         <div class="card-content">
 
-              <p class="title is-4">Pete Alonso Mets Jersey</p>
+              <p class="title is-4">{{product.name}}</p>
               <p class="subtitle is-6"> Seller: @username</p>
           <hr>
         <div class="content">
          <p>Size: Large</p>
-          <p>Price: $20</p>
+          <p>Price: {{product.price}}</p>
           <br>
-          <button class="button is-primary is-pulled-right" (click)="toggleModal1()">
-            <span>More</span>
-          </button>
-          <div class="modal" [ngClass]="{ 'is-active' : isModal1Active }">
-            <div class="modal-background" (click)="toggleModal1()"></div>
-            <div class="modal-card">
-              <header class="modal-card-head">
-                <p class="modal-card-title">Pete Alonso Mets Jersey</p>
-                <button class="delete" aria-label="close" (click)="toggleModal1()"></button>
-              </header>
-              <section class="modal-card-body">
-                <p>Seller: @username</p>
-                <p>Size: Large</p>
-                <p>Price: $25</p>
-                <p>Next availability to rent: December 12th</p>
-              </section>
-              <footer class="modal-card-foot">
-                <button class="button is-link" (click)="toggleModal1()">Add to Cart</button>
-              </footer>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
+          <button class="button is-link" [routerLink]="['/cart', { id:product.id }]">
+                 <span>Add to Cart</span>
+             </button>
 
-      <div class="column card">
-        <div class="card-image is-one-third">
-          <figure class="image is-4by3">
-            <img src="assets/img/mens/mens-Skjei.jpeg" alt="Skeji mens jersey">
-          </figure>
-        </div>
-        <div class="card-content">
-          <p class="title is-4">Brady Skeji Rangers Jersey</p>
-          <p class="subtitle is-6"> Seller: @username</p>
-          <hr>
-          <div class="content">
-            <p>Size: Medium</p>
-            <p>Price: $30</p>
-            <br>
-            <button class="button is-primary is-pulled-right" (click)="toggleModal2()">
-              <span>More</span>
-            </button>
-            <div class="modal" [ngClass]="{ 'is-active' : isModal2Active }">
-              <div class="modal-background" (click)="toggleModal2()"></div>
-              <div class="modal-card">
-                <header class="modal-card-head">
-                  <p class="modal-card-title">Brady Skeji Rangers Jersey</p>
-                  <button class="delete" aria-label="close" (click)="toggleModal2()"></button>
-                </header>
-                <section class="modal-card-body">
-                  <p>Seller: @username</p>
-                  <p>Size: Medium</p>
-                  <p>Price: $35</p>
-                  <p>Next availability to rent: December 20th</p>
-                </section>
-                <footer class="modal-card-foot">
-                  <button class="button is-link" (click)="toggleModal2()">Add to Cart</button>
-                </footer>
-              </div>
-            </div>
-          </div>
+
+            <!--          <button class="button is-primary is-pulled-right" (click)="toggleModal1(product.id)">-->
+<!--            <span>More</span>-->
+<!--          </button>-->
+<!--          <div class="modal" [ngClass]="{ 'is-active' : isModal1Active }">-->
+<!--            <div class="modal-background" (click)="toggleModal1(product.id)"></div>-->
+<!--            <div class="modal-card">-->
+<!--              <header class="modal-card-head">-->
+<!--                <p class="modal-card-title">{{product.name}}</p>-->
+<!--                <button class="delete" aria-label="close" (click)="toggleModal1(product.id)"></button>-->
+<!--              </header>-->
+<!--              <section class="modal-card-body">-->
+<!--                <p>Seller: @username</p>-->
+<!--                <p>Size: Large</p>-->
+<!--                <p>Price: {{product.price}}</p>-->
+<!--                <p>Next availability to rent: December 12th</p>-->
+<!--              </section>-->
+<!--              <footer class="modal-card-foot">-->
+<!--                <button class="button is-link" [routerLink]="['/cart', { id:product.id }]">Add to Cart</button>-->
+<!--              </footer>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
       </div>
-
-      <div class="column card">
-        <div class="card-image is-one-third">
-          <figure class="image is-4by3">
-            <img src="assets/img/mens/mens-giants.jpg" alt="NY Giants mens Tshirt">
-          </figure>
-        </div>
-        <div class="card-content">
-          <p class="title is-4">New York Giants T-Shirt</p>
-          <p class="subtitle is-6"> Seller: @username</p>
-          <hr>
-          <div class="content">
-            <p>Size: X-Large</p>
-            <p>Price: $10</p>
-            <br>
-            <button class="button is-primary is-pulled-right" (click)="toggleModal3()">
-              <span>More</span>
-            </button>
-            <div class="modal" [ngClass]="{ 'is-active' : isModal3Active }">
-              <div class="modal-background" (click)="toggleModal3()"></div>
-              <div class="modal-card">
-                <header class="modal-card-head">
-                  <p class="modal-card-title">Brady Skeji Rangers Jersey</p>
-                  <button class="delete" aria-label="close" (click)="toggleModal3()"></button>
-                </header>
-                <section class="modal-card-body">
-                  <p>Seller: @username</p>
-                  <p>Size: X-Large</p>
-                  <p>Price: $10</p>
-                  <p>Available to Rent Now</p>
-                </section>
-                <footer class="modal-card-foot">
-                  <button class="button is-link" (click)="toggleModal3()">Add to Cart</button>
-                </footer>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       </div>
     </div>

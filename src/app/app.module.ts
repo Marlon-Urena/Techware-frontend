@@ -9,6 +9,10 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MensComponent } from './components/mens/mens.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ProductService } from './services/product.service';
+import { CartComponent } from './components/cart/cart.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { MensComponent } from './components/mens/mens.component';
     HomeComponent,
     LoginComponent,
     SignUpComponent,
-    MensComponent
+    MensComponent,
+    CheckoutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,7 @@ import { MensComponent } from './components/mens/mens.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
